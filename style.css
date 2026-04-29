@@ -1,0 +1,11 @@
+#myPara{
+    color:red;
+    font-style:italic;
+}
+.myPara-class{
+    color:yellow;
+    font-style:italic;
+}
+body{
+    background-color:pink;
+}

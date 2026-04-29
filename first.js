@@ -625,5 +625,51 @@ let producct=suarr.reduce((sum,curr)=>{
     return sum*curr;
 });console.log(producct);
 
+//-----window object
+// ---its a browsers object automaticalyy created
+// --- its a global with lots of properties and methods
+console.log(result); //can rewrite as 
+window.console.log(result);
+
+//---------DOM--------
+
+// DOCUMENT OBJECT MODEL--- when a page is loaded the browser create a DOM of the page
+
+// window.documet will get all the code
+// if i want to see all properties console.dir(document)
+// console.dir-- will print the properties or methods
+
+console.dir(window.document);
+
+console.dir(document.body);
+console.log(document.body.childNodes);
+//console.log(document.body.style.background="purple");
+// -- to make dynamic changes--
+
+//--- DOM MANIPULATION--- access elememts
+
+// ---using their id ---- as its unique item 
+
+// let para= document.getElementById("myPara");
+// console.dir(para);
 
 
+// ---- slecting with class-- returns html collection--similar to array
+
+let pras= document.getElementsByClassName("myPara-class");
+console.dir(pras);
+console.log(pras);
+
+//---selecting using tagname---
+let mypras= document.getElementsByTagName("p");
+console.dir(mypras);
+console.log(mypras);
+
+//---- query selector---
+// document.querySelector("myid/myclass/tag")--- this will return first Element
+// document.querySelectorAll("myid/myclass/tag")--- this will retrun nodelist
+
+let ras= document.querySelectorAll("p");
+console.dir(ras);
+let rass=document.querySelector("p");
+console.dir(rass);
