@@ -1,6 +1,13 @@
-#myPara{
+div{
     color:red;
     font-style:italic;
+    text-align: center;
+    height: 90px;
+    width: 90px;
+    border: 1px solid;
+    border-color: black;
+    background-color: palevioletred;
+    margin: 5px;
 }
 .myPara-class{
     color:yellow;
@@ -8,4 +15,20 @@
 }
 body{
     background-color:pink;
+}
+.box{
+    text-align: center;
+    height: 80px;
+    width: 80px;
+    color: red;
+    border: 1px solid;
+    border-color: black;
+    margin: 5px;
+
+}
+.mypara{
+    color: blue;
+}
+.newclass{
+    background-color:yellow;
 }

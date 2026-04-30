@@ -669,7 +669,106 @@ console.log(mypras);
 // document.querySelector("myid/myclass/tag")--- this will return first Element
 // document.querySelectorAll("myid/myclass/tag")--- this will retrun nodelist
 
-let ras= document.querySelectorAll("p");
+let ras= document.querySelectorAll("p");//all elements
 console.dir(ras);
-let rass=document.querySelector("p");
+let rass=document.querySelector("#myPara");//first element
 console.dir(rass);
+//  #- to get id, .classanme to get class
+
+// // --- DOM manipulation properties---
+
+// // --tageName: to print the tag name of an element nodes
+
+
+// let sas= document.querySelector("button");//all elements
+
+// console.log(sas.tagName);
+
+// // --innertext--- it will return the text content and its content
+// let li= document.querySelector("li");
+// let div= document.querySelector("div");
+// console.log(div.innerText);
+// // --innerhtml--- returns plain text or html contents in the element
+// console.log(div.innerHTML);
+// // we can also manipuloate the original data here like changed whole content in div 
+// // console.log(div.innerHTML="<div></div>");
+// // we can also manipuloate the original data here like changed whole content in list 
+// console.log(li.innerText="applesss");
+// console.log(div.innerHTML);
+
+// // ---textcontent---- it returns textual contents even for hiden elements
+// let heading= document.querySelector("h3");
+// console.log(heading.textContent);
+
+// // -- practice---
+
+// let h2=document.querySelector("h2");
+// console.log(h2.innerText)//hello js
+
+// h2.innerText= h2.innerText+" from sushu";
+// console.log(h2.innerText);
+
+// let divs=document.querySelectorAll(".box");
+// console.log(divs[1].innerText+=" welcome");
+// divs[2].innerText="welcome";
+// console.log(divs[2].innerText);
+
+
+// //usinh for loop to change the values of the divs
+// let idx=1;
+// for (div of divs){
+//     div.innerText=`new value ${idx}`
+//     idx++
+//     console.log(div.innerText)
+// }
+
+// --- dom manipulation--- 
+// ---attributes---
+
+//---getattribute--- to get the attribute value
+ let divv= document.querySelector("div");
+console.log(divv);
+let id= divv.getAttribute("id");
+console.log(id);
+
+
+let names= divv.getAttribute("name");
+console.log(names);
+
+let para= document.querySelector("p");
+console.log(para);
+para.setAttribute("id","678");
+
+// set attribute------ to set the attribute value
+divv.setAttribute("id","7");
+para.setAttribute("id","678");
+
+// ---style---node.style
+let styleDiv= document.querySelector("div");
+
+styleDiv.style.backgroundColor="yellow";
+styleDiv.style.fontSize="14px";
+styleDiv.innerText="hello";
+//styleDiv.style.visibility="hidden";
+
+//---- create an element 
+let btn=document.createElement("button");
+btn.innerHTML="click here!"
+console.log(btn)
+
+//--- insert elemnts-- node.apped(el)-- adds at end of the node(inside)
+//console.log(styleDiv.append(btn));
+//console.log(styleDiv.prepend(btn)); //--  adds at start of the node(inside)
+//styleDiv.after(btn); //---  adds after the node(outside) 
+//console.log(styleDiv.before(btn)); //--- adds before the node (outside)
+
+//-- example 
+
+let mynewheading=document.createElement("h1");
+mynewheading.innerHTML="this is my new heading for insert elements"
+document.querySelector("div").before(mynewheading);
+console.log(mynewheading);
+// --- delete element-- node.remove()--- removes the node
+
+let removeDiv=document.querySelector("div");
+removeDiv.remove();
