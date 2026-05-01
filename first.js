@@ -772,3 +772,103 @@ console.log(mynewheading);
 
 let removeDiv=document.querySelector("div");
 removeDiv.remove();
+
+// ------- EVENTS IN JS ------
+
+// the change in the state of an object is known as event
+
+// Event basically indicates that some action has occurred on the page. (user inputs/actions).
+// like mouse events (click, double click), keyboard events (heypress,keyup,down)),form events (like submitting aform)print events
+
+// ---- inline event handling-- writing inline events to occuur in html code 
+
+{/* <div onmouseover="console.log('you are inside div')" class="box">
+<p> second div</p>
+</div>
+<button onclick="console.log('button was clicked once');alert('helloww')">
+clickme!
+</button>
+<button ondblclick="console.log('button was clicked twice');alert('not again')">
+click me twice!
+</button> */}
+
+
+// ---EVENT HANDLING IN JS----
+
+// node.event=()=>{//handle here}
+
+// if we write inline event handleign and in js . js handlingis gonna happen
+
+let btn1=document.querySelector('#btn1')
+btn1.onclick=()=>{
+    console.log('button was clicked once');alert('helloww')
+    let a=25
+    a++
+    console.log(a);
+};
+
+let box1= document.querySelector(".box")
+
+// box1.onmouseover=()=>{
+//     console.log('you are inside div');
+// }
+
+
+// --- EVENT OBJECT----
+
+// -- ITS a special object that has details about the event
+// --alll event handlers have access to event objetcts properties and methods
+
+// node.event=(e)=>{//handle here} we will have properties like e.target,e.clientX,e.type
+
+box1.onmouseover=(evt)=>{
+    console.log('you are inside div');
+    console.log(evt.type);
+    console.log(evt);
+    console.log(evt.target);
+    console.log(evt.clientX);
+}
+
+// --drawbacks-- of inline event handler is that html code becomes bulky
+// --- for event handling in ja using node.event()-- is that we can only write one function and use it once
+
+//---- EVENT LISTENERS---
+//  wait for specific user interactions or browser actions (events) to occur on a DOM element, such as clicks, key presses, or mouse movements. 
+// When the event happens, the listener executes a designated callback function, enabling interactive and dynamic web applications.
+
+// node.addEventListener(event,callback) here callback is a function, its a event handler
+// node.removeeventlistenter(event,callavk)-- make sure to have same callback refence to remove
+
+
+let dblclick= document.querySelector("#btn2")
+
+dblclick.addEventListener("dblclick",(evt)=>{
+    console.log('button was clicked twice');
+    console.log(evt.type);
+    console.log(evt);
+    console.log(evt.target);
+    console.log(evt.clientX);
+
+});
+
+dblclick.addEventListener("dblclick",(evt)=>{
+    console.log('button was clicked twice 2');
+
+});
+
+// dblclick.addEventListener("dblclick",(evt)=>{
+//     console.log('button was clicked twice 3');
+
+// });
+
+//we need to have same callback function in order to  remove event
+
+const removehandler2=()=>{
+    console.log('button was clicked 3');
+}
+
+//to perform addevent
+
+dblclick.addEventListener("dblclick",removehandler2);
+dblclick.removeEventListener("dblclick",removehandler2);
+
